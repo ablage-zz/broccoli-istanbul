@@ -1,6 +1,6 @@
 {
   "name": "broccoli-istanbul",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Broccoli plugin for Istanbul instrumentation",
   "license": "MIT",
   "main": "index.js",
