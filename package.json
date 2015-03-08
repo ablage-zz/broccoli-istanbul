@@ -1,0 +1,40 @@
+{
+  "name": "broccoli-istanbul",
+  "version": "0.1.0",
+  "description": "Broccoli plugin for Istanbul instrumentation",
+  "license": "MIT",
+  "main": "index.js",
+  "homepage": "https://github.com/marcelerz/broccoli-istanbul",
+  "bugs": "https://github.com/marcelerz/broccoli-istanbul/issues",
+  "author": {
+    "name": "Marcel Erz",
+    "email": "me@marcelerz.com",
+    "url": "http://www.marcelerz.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marcelerz/broccoli-istanbul.git"
+  },
+  "keywords": [
+    "broccoli-plugin",
+    "istanbul",
+    "coverage",
+    "broccoli",
+    "instrumentation"
+  ],
+  "scripts": {
+    "test": "istanbul cover -- _mocha --reporter spec"
+  },
+  "dependencies": {
+    "broccoli-caching-writer": "^0.5.5",
+    "istanbul": "^0.3.7",
+    "mkdirp": "^0.5.0",
+    "promise": "^6.0.0"
+  },
+  "devDependencies": {
+    "codeclimate-test-reporter": "^0.0.4",
+    "coveralls": "^2.11.2",
+    "chai": "^2.1.1",
+    "mocha": "^2.2.0"
+  }
+}
