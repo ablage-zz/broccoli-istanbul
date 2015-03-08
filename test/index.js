@@ -22,7 +22,7 @@ describe('broccoli-istanbul', function() {
 	});
 
 	afterEach(function() {
-		//fs.unlinkSync(this.destFilePath);
+		fs.unlinkSync(this.destFilePath);
 	});
 
 	it('should instrument code', function(done) {
@@ -50,6 +50,21 @@ describe('broccoli-istanbul', function() {
 		promise.then(function () {
 			var actual = fs.readFileSync(this.destFilePath, 'utf8');
 			expect(actual).to.be.equal(this.expected);
+			done();
+
+		}.bind(this)).then(null, function (err) {
+			done(err);
+		});
+	});
+
+	it('should work with default values', function(done) {
+		var promise,
+			compiler;
+
+		compiler = IstanbulCompiler(this.tree, this.filename, this.filename);
+		promise = compiler.updateCache(this.tree, this.destPath);
+
+		promise.then(function () {
 			done();
 
 		}.bind(this)).then(null, function (err) {
